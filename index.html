@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hi, lovey!</title>
+  <title>Happy Monthsary, Krimmy!</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@500;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,13 +51,33 @@
       100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
     }
 
+    /* VIDEO BACKGROUND */
+    .video-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      overflow: hidden; z-index: 0;
+    }
+    .video-bg video {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%; min-height: 100%;
+      width: auto; height: auto;
+      object-fit: cover;
+    }
+    .video-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(19,10,16,0.65);
+      z-index: 1;
+    }
+
     /* LOCK SCREEN */
     #lock-screen {
       position: fixed; inset: 0;
       z-index: 1000;
       display: flex; align-items: center; justify-content: center;
       padding: 2rem;
-      background: radial-gradient(ellipse at 50% 40%, #2a0f22 0%, #130a10 70%);
+      background: #130a10;
       transition: opacity 0.9s ease, transform 0.9s ease;
     }
     #lock-screen.unlocking {
@@ -179,7 +199,11 @@
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       text-align: center; padding: 2rem;
+      position: relative;
+      overflow: hidden;
     }
+    #hero .hero-eyebrow, #hero .hero-title, #hero .hero-sub,
+    #hero .hero-date, #hero .scroll-hint { position: relative; z-index: 2; }
     .hero-eyebrow {
       font-family: 'Lato', sans-serif; font-weight: 300;
       font-size: 0.72rem; letter-spacing: 0.35em;
@@ -361,6 +385,11 @@
 
 <!-- LOCK SCREEN -->
 <div id="lock-screen">
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="bg.mp4" type="video/mp4" />
+    </video>
+  </div>
   <div class="lock-card">
     <div class="unlock-success" id="unlock-success">
       <span style="font-size:2.5rem">🌸</span>
@@ -389,8 +418,13 @@
 <!-- MAIN SITE -->
 <div id="main-site">
   <section id="hero">
-    <p class="hero-eyebrow">A love letter for you, lovey</p>
-    <h1 class="hero-title">Hi,<br/>Lovey 🌸</h1>
+    <div class="video-bg">
+      <video autoplay muted loop playsinline>
+        <source src="bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="hero-eyebrow">A love letter for you, Krimmy</p>
+    <h1 class="hero-title">Happy Monthsary,<br/>Krimmy 🌸</h1>
     <p class="hero-sub">Every day with you feels like a dream I never want to wake up from.</p>
     <p class="hero-date">To the one who holds my whole heart</p>
     <div class="scroll-hint">scroll down</div>
@@ -402,7 +436,7 @@
     <p class="section-label">Words from my heart</p>
     <div class="letter-card">
       <p class="letter-body">
-        My dearest lovey,<br/><br/>
+        My dearest Krimmy,<br/><br/>
         It's been 18 months, but somehow it feels like you have always been part of my story.
         You make ordinary days feel <em>extraordinary</em> — the way you laugh, the way you care,
         the way you look at me like I'm worth something.<br/><br/>
